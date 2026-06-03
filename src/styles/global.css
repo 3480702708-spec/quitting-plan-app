@@ -1,0 +1,109 @@
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-primary: #7c3aed;
+  --color-primary-light: #ede9fe;
+  --color-accent-1: #0891b2;
+  --color-accent-2: #059669;
+  --color-accent-3: #d97706;
+  --color-accent-4: #dc2626;
+  --color-accent-5: #4f46e5;
+  --color-text: #1e1b1e;
+  --color-text-secondary: #5f5b5f;
+  --color-border: #e8e5e1;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --max-width: 720px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screen container */
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.screen-inner {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+/* Fade transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* Ant Design overrides */
+.ant-radio-button-wrapper {
+  border-radius: var(--radius) !important;
+}
+
+.ant-card {
+  border-radius: var(--radius) !important;
+  border-color: var(--color-border) !important;
+}
+
+.ant-collapse {
+  border-radius: var(--radius) !important;
+  border-color: var(--color-border) !important;
+  background: transparent !important;
+}
+
+.ant-collapse-item {
+  border-color: var(--color-border) !important;
+}
+
+.ant-collapse-header {
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .screen {
+    padding: 1.25rem 0.75rem;
+  }
+  html {
+    font-size: 15px;
+  }
+}
